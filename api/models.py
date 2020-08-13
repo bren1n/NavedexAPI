@@ -1,3 +1,27 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
 
-# Create your models here.
+
+class User(AbstractUser):
+    username = models.CharField(blank=True, null=True, max_length=100)
+    email = models.EmailField(unique=True, max_length=100)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    def __str__(self):
+        return '{}'.format(self.email)
+
+
+class Project(models.Model):
+    name = models.CharField
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Naver(models.Model):
+    name = models.CharField
+    admission_date = models.DateField(default=timezone.now)
+    birthdate = models.DateField
+    job_role = models.CharField
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
