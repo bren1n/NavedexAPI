@@ -14,14 +14,15 @@ class User(AbstractUser):
         return '{}'.format(self.email)
 
 
-class Project(models.Model):
-    name = models.CharField
+class Naver(models.Model):
+    name = models.CharField(max_length=100)
+    admission_date = models.DateField(default=timezone.now)
+    birthdate = models.DateField()
+    job_role = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-class Naver(models.Model):
-    name = models.CharField
-    admission_date = models.DateField(default=timezone.now)
-    birthdate = models.DateField
-    job_role = models.CharField
+class Project(models.Model):
+    name = models.CharField(max_length=100)
+    navers = models.ManyToManyField(Naver, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

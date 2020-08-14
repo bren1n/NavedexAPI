@@ -18,10 +18,10 @@ class UserSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ['name']
+        fields = ['id', 'name', 'user_id', 'navers']
 
 
 class NaverSerializer(serializers.ModelSerializer):
     class Meta:
         model = Naver
-        fields = ['name', 'birthdate', 'job_role']
+        fields = ['name', 'birthdate', 'job_role', 'navers', 'user_id']
