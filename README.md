@@ -25,7 +25,7 @@ Siga as seguintes instruções para instalação do projeto:
 5. Por último, para executar a API, execute o seguinte comando:
 ``python manage.py runserver``
 
-##Teste da API
+## Teste da API
 
 A URLs da API e o seus respectivos métodos são as seguintes:
 
@@ -39,7 +39,7 @@ POST | /user/register
 POST | /user/token , /user/token/refresh
 
 Já o JSON utilizado para passar atributos de objetos a serem cadastrados/atualizados nas requisições possui a seguinte estrutura:
-###User
+### User
 ``
 {
  "email": "email@email.com",
@@ -47,7 +47,7 @@ Já o JSON utilizado para passar atributos de objetos a serem cadastrados/atuali
 }
 ``
 
-###Project
+### Project
 ``
 {
   "name": "Nome do projeto",
@@ -55,7 +55,7 @@ Já o JSON utilizado para passar atributos de objetos a serem cadastrados/atuali
 }
 ``
 
-###Naver
+### Naver
 ``
 {
   "name": "Nome do naver",
