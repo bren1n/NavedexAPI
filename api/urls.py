@@ -8,5 +8,7 @@ urlpatterns = [
     path('user/token', jwt_views.TokenObtainPairView.as_view()),
     path('user/token/refresh', jwt_views.TokenRefreshView.as_view()),
     path('project', project_list),
-    path('project/<int:id>', project_id)
+    path('project/<int:id>', project_id),
+    path('naver', naver_list),
+    path('naver/<int:id>', naver_id)
 ]

@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.utils import timezone
 
 
 class User(AbstractUser):
@@ -16,7 +15,7 @@ class User(AbstractUser):
 
 class Naver(models.Model):
     name = models.CharField(max_length=100)
-    admission_date = models.DateField(default=timezone.now)
+    admission_date = models.DateField()
     birthdate = models.DateField()
     job_role = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -24,5 +23,5 @@ class Naver(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
-    navers = models.ManyToManyField(Naver, blank=True, null=True)
+    navers = models.ManyToManyField(Naver, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

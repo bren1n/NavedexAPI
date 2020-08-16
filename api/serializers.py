@@ -19,9 +19,13 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ['id', 'name', 'user_id', 'navers']
+        depth = 1
 
 
 class NaverSerializer(serializers.ModelSerializer):
+    projects = ProjectSerializer(many=True, read_only=True)
+
     class Meta:
         model = Naver
-        fields = ['name', 'birthdate', 'job_role', 'navers', 'user_id']
+        fields = ['id', 'name', 'birthdate', 'admission_date', 'projects', 'job_role', 'user_id']
+        depth = 1
