@@ -73,7 +73,15 @@ O teste da API deve ser feito da seguinte forma:
   
 **OBS.:** Os passos 3 e 4 podem ser invertidos. O que importa é que haja um objeto primeiro para que o outro possa ser criado :)
 
-5. Com navers e projetos cadastrados, você pode visualizar suas listagens ou objetos individualmente, além de editar e deletar os objetos criados.
+5. Com navers e projetos cadastrados, você pode visualizar suas listagens ou objetos individualmente. Durante as consultas gerais, você pode utilizar filtros:
+Filtro   | Descrição
+--------- | ------ 
+/project?name=<nome_projeto> | Filtra pelo nome do projeto
+/naver?name=<nome_naver> | Filtra pelo nome do naver
+/naver?job_role=<nome_funcao> | Filtra pela função do naver
+/naver?initial_date=<data_inicio>?final_date=<data_fim> | Filtra pela data de admissão dentro do range descrito
+
+Além disso, você pode editar e deletar os objetos de acordo com as URLs e métodos descritos anteriormente.
 
 ##Dificuldades
 Durante o desenvolvimento dos projeto, tive dificuldades com a resposta das requisições, ao editar os campos do JSON. Portanto, alguns campos como o de user_id estão aparecendo nos objetos naver e project, e a lista de projetos não aparece corretamente para o naver.
